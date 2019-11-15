@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VoE-9c-MvA">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,48 +10,167 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Inbox-->
+        <scene sceneID="N3D-og-h7T">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tackle_Box" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="MessagesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6qb-sN-Jit" customClass="MessagesViewController" customModule="Tackle_Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zsW-i0-8Hm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ttp-jW-xYC">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Home" image="home-35" id="bKZ-5r-nMB"/>
-                                    <tabBarItem title="Profile" image="profile-35" id="tcj-Bx-i2N"/>
-                                </items>
-                            </tabBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTo-qa-cTk">
-                                <rect key="frame" x="0.0" y="60" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Tackle Box" id="KuA-ax-Yj1">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jx7-hJ-2YH"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ouC-bP-WM1">
-                                <rect key="frame" x="0.0" y="104" width="414" height="44"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="mzZ-Og-WQR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="0.0"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Messages..." translatesAutoresizingMaskIntoConstraints="NO" id="EnV-ip-G3W">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vxV-1N-IjA" firstAttribute="bottom" secondItem="mzZ-Og-WQR" secondAttribute="bottom" constant="725" id="5DT-IT-eie"/>
+                            <constraint firstItem="mzZ-Og-WQR" firstAttribute="leading" secondItem="zsW-i0-8Hm" secondAttribute="leading" id="9YW-OF-vHd"/>
+                            <constraint firstAttribute="trailing" secondItem="mzZ-Og-WQR" secondAttribute="trailing" id="Gln-W6-TEM"/>
+                            <constraint firstItem="mzZ-Og-WQR" firstAttribute="top" secondItem="vxV-1N-IjA" secondAttribute="top" id="bOU-EZ-Nh9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vxV-1N-IjA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Inbox" id="eDT-SI-g5i">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="8jL-TL-XCH"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uzX-cx-STv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3150.7246376811595" y="393.75"/>
+        </scene>
+        <!--TackleBox-->
+        <scene sceneID="ur3-Bm-xlz">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QQN-CR-Tgm" customClass="HomeViewController" customModule="Tackle_Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EMB-K2-MIL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Items..." translatesAutoresizingMaskIntoConstraints="NO" id="Ign-6S-YkY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ign-6S-YkY" firstAttribute="leading" secondItem="EMB-K2-MIL" secondAttribute="leading" id="OeG-4V-YS1"/>
+                            <constraint firstItem="Ign-6S-YkY" firstAttribute="top" secondItem="iJM-qw-8gw" secondAttribute="top" id="Uk3-gp-1ju"/>
+                            <constraint firstItem="iJM-qw-8gw" firstAttribute="bottom" secondItem="Ign-6S-YkY" secondAttribute="bottom" constant="681" id="cGU-VZ-SoV"/>
+                            <constraint firstAttribute="trailing" secondItem="Ign-6S-YkY" secondAttribute="trailing" id="fe6-EE-t4c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iJM-qw-8gw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="TackleBox" id="Mre-kh-0bv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WoD-E9-g6v">
+                            <connections>
+                                <segue destination="y4P-VY-B8i" kind="show" id="q4d-NT-Ena"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFu-WS-hhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3136" y="-327"/>
+        </scene>
+        <!--Add Listing View Controller-->
+        <scene sceneID="doV-ER-lIb">
+            <objects>
+                <viewController storyboardIdentifier="AddListingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y4P-VY-B8i" customClass="AddListingViewController" customModule="Tackle_Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nsf-42-oBo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gjb-1e-XT2"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPK-Pi-v3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4048" y="-328"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Yka-Ml-PtW">
+            <objects>
+                <tabBarController id="VoE-9c-MvA" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6mJ-9A-Y0F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TCx-OZ-bfR" kind="relationship" relationship="viewControllers" id="cHz-FN-Lum"/>
+                        <segue destination="KgH-fD-eKu" kind="relationship" relationship="viewControllers" id="Gyt-wM-tse"/>
+                        <segue destination="Qnc-TQ-bse" kind="relationship" relationship="viewControllers" id="9cb-jx-UwI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Di5-WH-0D2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="135"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="vOX-Mc-FtK">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qnc-TQ-bse" customClass="ProfileViewController" customModule="Tackle_Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BJZ-nB-psl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="B8k-gX-oTh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="man-7" id="q4N-Vo-PT5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o1g-XD-St8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632" y="1087"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ADt-od-qaA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TCx-OZ-bfR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house-7" id="hKt-mQ-wPW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wnt-OL-OiO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QQN-CR-Tgm" kind="relationship" relationship="rootViewController" id="etu-TZ-RsY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhu-VF-FKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2226" y="-327"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="dXr-hy-jSr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KgH-fD-eKu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Messages" image="email-7" id="Nb3-Gh-0kH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jC1-BL-Ax5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6qb-sN-Jit" kind="relationship" relationship="rootViewController" id="VLv-L7-2gx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iz4-fB-AhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240.5797101449275" y="393.75"/>
         </scene>
     </scenes>
     <resources>
-        <image name="home-35" width="35" height="35"/>
-        <image name="profile-35" width="35" height="35"/>
+        <image name="email-7" width="30" height="30"/>
+        <image name="house-7" width="30" height="30"/>
+        <image name="man-7" width="29" height="30"/>
     </resources>
 </document>
